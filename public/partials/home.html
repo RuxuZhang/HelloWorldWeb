@@ -1,3 +1,28 @@
-<h1>Home Page</h1>
 
-<p>Date: {{time.date}}</p>
+
+<h2>Users</h2>
+
+   <h5>{{data.genre}}</h5>
+   <div ng-repeat='video in videos | filter: searchText | filter: data.genre'>
+        {{video.imageUrl}}
+        <a href="/#/video/{{video._id}}">
+            Edit
+        </a>
+        <a href="/#/video/delete/{{video._id}}">
+            Delete
+        </a>
+        <br>
+        <h4>{{video.title}}</h4>
+        <h5>{{video.description}}</h5>
+        <h5>{{video.genre}}</h5>
+        <hr>
+    </div>
+
+<p>
+    <a href="/#/register">Register</a>
+</p>
+
+<p>
+    <a href="/#/login">Login</a>
+</p>
+
