@@ -1,0 +1,45 @@
+swagger: "2.0"
+
+info:
+  description: "Sample server for Match"
+  version: "1.0.0"
+  title: "Swagger Times"
+
+host: "localhost:8080"
+basePath: "/"
+tags:
+- name: "times"
+  description: "TODO"
+schemes:
+- "https"
+- "http"
+
+paths:
+
+  /api/times:
+    get:
+      tags:
+      - "times"
+      summary: "Get current times"
+      description: "Get current times"
+      operationId: "times.getTimes"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Successfully returned times"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Times"
+        400:
+          description: "Bad request"
+
+
+definitions:
+
+  Times:
+    type: "object"
+    properties:
+      time:
+        type: "string"
